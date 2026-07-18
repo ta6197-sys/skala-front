@@ -66,6 +66,74 @@
         </section>
     </div>
 
-    <script src="js/script.js"></script>
+    <script>
+        // 외부 파일(js/script.js)을 거치지 않고 즉시 실행 - 네트워크로 스크립트를 받아오는 동안
+        // 카테고리 목록(기본 상태)이 먼저 보였다가 히어로 사진이 뒤늦게 덮이는 깜빡임을 없앤다.
+        (function () {
+            var stage = document.querySelector('.stage');
+            var typewriterEl = document.getElementById('typewriter');
+            var heroSub = document.getElementById('hero-sub');
+            var startBtn = document.getElementById('start-btn');
+            var categories = document.getElementById('categories');
+            var replayBtn = document.getElementById('replay-intro-btn');
+
+            if (!stage || !typewriterEl || !heroSub || !startBtn || !categories) {
+                return;
+            }
+
+            var title = 'SKALA';
+            var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function playTypewriter() {
+                var index = 0;
+                function typeNextLetter() {
+                    if (index <= title.length) {
+                        typewriterEl.textContent = title.slice(0, index);
+                        index++;
+                        setTimeout(typeNextLetter, 150);
+                    } else {
+                        heroSub.classList.add('visible');
+                        startBtn.classList.add('visible');
+                    }
+                }
+
+                if (reduceMotion) {
+                    typewriterEl.textContent = title;
+                    heroSub.classList.add('visible');
+                    startBtn.classList.add('visible');
+                } else {
+                    setTimeout(typeNextLetter, 400);
+                }
+            }
+
+            // 인트로를 다시 보여줄 때는 이전 재생 흔적(타이핑된 글자, 노출 상태)을 지우고 처음부터 다시 재생
+            function showIntro() {
+                typewriterEl.textContent = '';
+                heroSub.classList.remove('visible');
+                startBtn.classList.remove('visible');
+                stage.classList.add('intro-active');
+                playTypewriter();
+            }
+
+            // 히어로를 걷어내고 카테고리 화면을 확정 노출. 같은 세션에서는 재방문 시 인트로를 다시 틀지 않기 위해 기록해 둠
+            function enterCategories() {
+                stage.classList.remove('intro-active');
+                categories.classList.add('revealed');
+                sessionStorage.setItem('skalaIntroSeen', '1');
+            }
+
+            if (sessionStorage.getItem('skalaIntroSeen') === '1') {
+                categories.classList.add('revealed');
+            } else {
+                showIntro();
+            }
+
+            startBtn.addEventListener('click', enterCategories);
+
+            if (replayBtn) {
+                replayBtn.addEventListener('click', showIntro);
+            }
+        })();
+    </script>
 </body>
 </html>
