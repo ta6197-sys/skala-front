@@ -1,0 +1,122 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 여행지</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="index.html" class="nav-brand">메인</a>
+        <button type="button" class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="myProfile.html">내소개</a></li>
+            <li><a href="myClass.html">내 강의 일정</a></li>
+            <li><a href="signUp.html">회원가입</a></li>
+            <li><a href="signUpResult.html">회원가입결과</a></li>
+            <li><a href="myTrip.html" aria-current="page">내 여행지</a></li>
+        </ul>
+    </nav>
+
+    <nav class="section-dots" aria-label="섹션 바로가기">
+        <a href="#trip-01" aria-label="01. 전북 제천"><span class="dot"></span></a>
+        <a href="#trip-02" aria-label="02. 서울"><span class="dot"></span></a>
+        <a href="#trip-03" aria-label="03. 경주"><span class="dot"></span></a>
+        <a href="#trip-04" aria-label="04. 김해"><span class="dot"></span></a>
+        <a href="#trip-05" aria-label="05. 무주"><span class="dot"></span></a>
+        <a href="#trip-06" aria-label="06. 서울"><span class="dot"></span></a>
+        <a href="#trip-07" aria-label="07. 전북대 축제"><span class="dot"></span></a>
+    </nav>
+
+    <main class="profile-scroll trip-scroll">
+        <section class="profile-section" id="trip-01">
+            <div class="profile-section-inner profile-section-inner--split">
+                <div class="profile-section-text">
+                    <span class="section-index">01</span>
+                    <h2>전북 제천</h2>
+                    <p>친구들과 함께 해변에서 비치발리볼을 하며 놀았던 하루입니다.</p>
+                    <span class="trip-status">다녀옴</span>
+                </div>
+                <img class="section-photo trip-photo-landscape" src="images/trip1.jpg" alt="전북 제천 바닷가에서 친구들과 비치발리볼" width="1600" height="1200">
+            </div>
+        </section>
+
+        <section class="profile-section" id="trip-02">
+            <div class="profile-section-inner profile-section-inner--split">
+                <div class="profile-section-text">
+                    <span class="section-index">02</span>
+                    <h2>서울</h2>
+                    <p>높은 빌딩들 사이 번화한 거리를 걸으며 여행했던 곳입니다.</p>
+                    <span class="trip-status">다녀옴</span>
+                </div>
+                <img class="section-photo trip-photo-portrait photo-nudge-left" src="images/trip2.jpg" alt="서울 도심 거리 여행 사진" width="1050" height="1400" loading="lazy">
+            </div>
+        </section>
+
+        <section class="profile-section" id="trip-03">
+            <div class="profile-section-inner profile-section-inner--split">
+                <div class="profile-section-text">
+                    <span class="section-index">03</span>
+                    <h2>경주</h2>
+                    <p>산과 잔디밭이 내려다보이는 리조트에서 여유로운 시간을 보냈습니다.</p>
+                    <span class="trip-status">다녀옴</span>
+                </div>
+                <img class="section-photo trip-photo-landscape" src="images/trip3.jpg" alt="경주 리조트 건물과 산 전망" width="1600" height="1200" loading="lazy">
+            </div>
+        </section>
+
+        <section class="profile-section" id="trip-04">
+            <div class="profile-section-inner profile-section-inner--split">
+                <div class="profile-section-text">
+                    <span class="section-index">04</span>
+                    <h2>김해</h2>
+                    <p>롯데워터파크에서 신나게 물놀이를 즐겼던 하루입니다.</p>
+                    <span class="trip-status">다녀옴</span>
+                </div>
+                <div class="photo-frame">
+                    <img src="images/trip4.jpg" alt="김해 롯데워터파크에서 물놀이" width="750" height="1000" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-section" id="trip-05">
+            <div class="profile-section-inner profile-section-inner--split">
+                <div class="profile-section-text">
+                    <span class="section-index">05</span>
+                    <h2>무주</h2>
+                    <p>하얀 슬로프 위에서 스키를 즐겼던 겨울 여행지입니다.</p>
+                    <span class="trip-status">다녀옴</span>
+                </div>
+                <img class="section-photo trip-photo-landscape" src="images/trip5.jpg" alt="무주 스키장에서 스키 타는 모습" width="1200" height="1600" loading="lazy">
+            </div>
+        </section>
+
+        <section class="profile-section" id="trip-06">
+            <div class="profile-section-inner profile-section-inner--split">
+                <div class="profile-section-text">
+                    <span class="section-index">06</span>
+                    <h2>서울</h2>
+                    <p>화려한 불빛과 물가 야경이 아름다웠던 곳입니다.</p>
+                    <span class="trip-status">다녀옴</span>
+                </div>
+                <img class="section-photo trip-photo-landscape" src="images/trip6.jpg" alt="서울 도심 야경 사진" width="1200" height="1600" loading="lazy">
+            </div>
+        </section>
+
+        <section class="profile-section trip-video-section" id="trip-07">
+            <div class="profile-section-inner">
+                <span class="section-index">07</span>
+                <h2>전북대 축제</h2>
+                <video class="trip-video" src="videos/trip-video.mp4" muted loop playsinline controls preload="metadata"></video>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 강의 일정</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="index.html" class="nav-brand">메인</a>
+        <button type="button" class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="myProfile.html">내소개</a></li>
+            <li><a href="myClass.html" aria-current="page">내 강의 일정</a></li>
+            <li><a href="signUp.html">회원가입</a></li>
+            <li><a href="signUpResult.html">회원가입결과</a></li>
+            <li><a href="myTrip.html">내 여행지</a></li>
+        </ul>
+    </nav>
+
+    <main class="class-page">
+        <header class="class-header">
+            <h1>나의 강의 시간표</h1>
+            <p>월요일부터 금요일까지, SKALA에서 보내는 하루 일과입니다.</p>
+        </header>
+
+        <ul class="legend">
+            <li><span class="legend-dot course-dev"></span>개발/실습</li>
+            <li><span class="legend-dot course-theory"></span>이론/기초</li>
+            <li><span class="legend-dot course-project"></span>프로젝트/특강</li>
+        </ul>
+
+        <p class="scroll-hint">옆으로 스크롤해서 전체 시간표를 확인하세요 &rarr;</p>
+
+        <div class="table-scroll">
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th scope="col">시간</th>
+                        <th scope="col" data-day="mon">월요일</th>
+                        <th scope="col" data-day="tue">화요일</th>
+                        <th scope="col" data-day="wed">수요일</th>
+                        <th scope="col" data-day="thu">목요일</th>
+                        <th scope="col" data-day="fri">금요일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">09:00 - 10:00</th>
+                        <td class="course course-dev" rowspan="3" data-day="mon" data-start="9" data-end="12">Vue.js<br>웹 프레임워크</td>
+                        <td class="course course-theory" data-day="tue" data-start="9" data-end="10">네트워크<br>보안 기초</td>
+                        <td class="course course-theory" rowspan="3" data-day="wed" data-start="9" data-end="12">웹 시스템<br>설계 및 분석</td>
+                        <td class="course course-project" data-day="thu" data-start="9" data-end="10">IT 트렌드 특강</td>
+                        <td class="course course-dev" rowspan="3" data-day="fri" data-start="9" data-end="12">자바스크립트<br>심화 실습</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10:00 - 11:00</th>
+                        <td class="course course-theory" rowspan="2" data-day="tue" data-start="10" data-end="12">알고리즘 문제풀이</td>
+                        <td class="course course-dev" rowspan="2" data-day="thu" data-start="10" data-end="12">데이터베이스<br>SQL 실습</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11:00 - 12:00</th>
+                    </tr>
+                    <tr class="lunch-row">
+                        <th scope="row">12:00 - 13:00</th>
+                        <td class="lunch-time" colspan="5">점심 시간</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">13:00 - 14:00</th>
+                        <td class="course course-dev" rowspan="4" data-day="mon" data-start="13" data-end="17">UI/UX<br>디자인 표준</td>
+                        <td class="course course-dev" rowspan="2" data-day="tue" data-start="13" data-end="15">리눅스<br>시스템 관리</td>
+                        <td class="course course-theory" rowspan="2" data-day="wed" data-start="13" data-end="15">클라우드<br>AWS 기초</td>
+                        <td class="course course-theory" rowspan="3" data-day="thu" data-start="13" data-end="16">자료구조</td>
+                        <td class="course course-project" data-day="fri" data-start="13" data-end="14">개인 프로젝트</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">14:00 - 15:00</th>
+                        <td class="course course-project" rowspan="2" data-day="fri" data-start="14" data-end="16">오픈소스<br>소프트웨어</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">15:00 - 16:00</th>
+                        <td class="course course-dev" rowspan="2" data-day="tue" data-start="15" data-end="17">Git &amp; GitHub<br>버전 관리</td>
+                        <td class="course course-theory" rowspan="2" data-day="wed" data-start="15" data-end="17">인공지능<br>머신러닝 기초</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">16:00 - 17:00</th>
+                        <td class="course course-dev" rowspan="2" data-day="thu" data-start="16" data-end="18">빅데이터<br>분석 실무</td>
+                        <td class="empty-slot"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">17:00 - 18:00</th>
+                        <td class="course course-project" data-day="mon" data-start="17" data-end="18">취업 창업 특강</td>
+                        <td class="empty-slot"></td>
+                        <td class="empty-slot"></td>
+                        <td class="course course-project" data-day="fri" data-start="17" data-end="18">주간 회고</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

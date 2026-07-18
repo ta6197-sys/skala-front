@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="index.html" class="nav-brand">메인</a>
+        <button type="button" class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="myProfile.html">내소개</a></li>
+            <li><a href="myClass.html">내 강의 일정</a></li>
+            <li><a href="signUp.html" aria-current="page">회원가입</a></li>
+            <li><a href="signUpResult.html">회원가입결과</a></li>
+            <li><a href="myTrip.html">내 여행지</a></li>
+        </ul>
+    </nav>
+
+    <main class="form-page">
+        <header class="form-header">
+            <h1>회원가입</h1>
+            <p>SKALA 회원가입을 환영합니다.</p>
+        </header>
+
+        <form id="signup-form" class="signup-form">
+            <fieldset>
+                <legend>간편 가입</legend>
+                <button type="button" id="google-btn" class="google-btn">Google 계정으로 가입하기</button>
+                <p id="google-note" class="form-note">Google 인증은 구조만 재현되어 있으며, 실제로 동작하지 않습니다.</p>
+                <div class="divider"><span>또는 직접 입력</span></div>
+            </fieldset>
+
+            <fieldset>
+                <legend>계정 정보</legend>
+
+                <div class="form-row">
+                    <label for="userid">아이디</label>
+                    <input type="text" id="userid" name="userid" placeholder="4~15자 영문/숫자" pattern="[A-Za-z0-9]{4,15}" title="영문/숫자 4~15자로 입력해주세요" required>
+                    <span class="required-mark">필수</span>
+                </div>
+
+                <div class="form-row">
+                    <label for="password">비밀번호</label>
+                    <div class="password-field">
+                        <input type="password" id="password" name="password" placeholder="8자 이상 입력" minlength="8" required>
+                        <button type="button" class="password-toggle" data-target="password" aria-label="비밀번호 표시">표시</button>
+                    </div>
+                    <span class="required-mark">필수</span>
+                </div>
+
+                <div class="form-row">
+                    <label for="password-confirm">비밀번호 확인</label>
+                    <div class="password-field">
+                        <input type="password" id="password-confirm" name="password-confirm" placeholder="비밀번호를 한 번 더 입력해주세요" minlength="8" required>
+                        <button type="button" class="password-toggle" data-target="password-confirm" aria-label="비밀번호 표시">표시</button>
+                    </div>
+                    <span class="required-mark">필수</span>
+                    <span id="password-confirm-error" class="field-error" hidden>비밀번호가 일치하지 않습니다.</span>
+                </div>
+
+                <div class="form-row">
+                    <label for="email-id">이메일</label>
+                    <div class="inline-group">
+                        <input type="text" id="email-id" name="email-id" placeholder="example" pattern="[A-Za-z0-9._%+-]+" title="영문/숫자로 입력해주세요">
+                        <span class="at-sign">@</span>
+                        <select name="email-domain">
+                            <option value="">직접 입력</option>
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="naver.com">naver.com</option>
+                            <option value="daum.net">daum.net</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="phone">전화번호</label>
+                    <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" pattern="01[0-9]-[0-9]{3,4}-[0-9]{4}" title="010-0000-0000 형식으로 입력해주세요">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>개인 프로필 정보</legend>
+
+                <div class="form-row">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name">
+                </div>
+
+                <div class="form-row">
+                    <label for="birthdate">생년월일</label>
+                    <input type="date" id="birthdate" name="birthdate">
+                </div>
+
+                <div class="form-row">
+                    <span class="row-label">성별</span>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="male" checked> 남성</label>
+                        <label><input type="radio" name="gender" value="female"> 여성</label>
+                        <label><input type="radio" name="gender" value="none"> 선택안함</label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <span class="row-label">관심 분야 (중복 선택 가능)</span>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interest" value="frontend"> 웹 프론트엔드 (Vue.js/HTML)</label>
+                        <label><input type="checkbox" name="interest" value="uiux"> UI/UX 디자인 표준</label>
+                        <label><input type="checkbox" name="interest" value="backend"> 백엔드 &amp; 데이터베이스</label>
+                        <label><input type="checkbox" name="interest" value="cloud"> 클라우드 &amp; 인프라</label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="referral">가입 경로</label>
+                    <select id="referral" name="referral">
+                        <option value="">-- 선택해 주세요 --</option>
+                        <option value="search">검색</option>
+                        <option value="friend">지인 추천</option>
+                        <option value="sns">SNS</option>
+                        <option value="etc">기타</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>자기소개</legend>
+                <div class="form-row">
+                    <label for="intro">나를 표현하는 한 줄 소개 또는 가입 인사</label>
+                    <textarea id="intro" name="intro" maxlength="200" placeholder="여기에 내용을 입력하세요 (최대 200자)"></textarea>
+                </div>
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">동의하고 회원가입</button>
+                <button type="reset" id="reset-btn" class="btn-secondary">다시 작성</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

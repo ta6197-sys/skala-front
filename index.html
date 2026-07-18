@@ -1,12 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[과제] Project 구성과 index.html 생성</title>
+    <title>SKALA - 메인</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>환영인사</h1>
-    <p>스칼라에 오신 것을 환영합니다.</p>
+    <div class="stage">
+        <section id="hero-screen" class="hero-screen">
+            <div class="hero-image-wrap">
+                <img class="hero-bg-image" src="images/welcome.jpg" alt="SKALA 환영 이미지" width="960" height="1280">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-bottom-bar">
+                <div class="hero-text">
+                    <h1 aria-label="SKALA"><span id="typewriter" aria-hidden="true"></span><span class="cursor" aria-hidden="true">|</span></h1>
+                    <p id="hero-sub" class="hero-sub">환영합니다.</p>
+                </div>
+                <button type="button" id="start-btn" class="hero-click">
+                    <span>시작하기</span>
+                    <span class="arrow" aria-hidden="true">&rarr;</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="category-screen" class="category-screen">
+            <main id="categories" class="category-list">
+                <section class="category-item">
+                    <h3>소개합니다</h3>
+                    <p>진지함과 장난기 사이 어딘가입니다.
+해야 할 일에는 누구보다 진심이고, 사람들과는 편하게 웃는 걸 좋아합니다..</p>
+                    <a href="myProfile.html">바로가기</a>
+                </section>
+                <section class="category-item">
+                    <h3>내 강의 일정</h3>
+                    <p>월요일부터 금요일까지, SKALA의 강의 일정을 확인해보세요.</p>
+                    <span class="category-stat">이번 주 18개 강의</span>
+                    <a href="myClass.html">바로가기</a>
+                </section>
+                <section class="category-item">
+                    <h3>회원가입</h3>
+                    <p>SKALA-FRONT의 새로운 얼굴이 되어보세요.</p>
+                    <a href="signUp.html">바로가기</a>
+                </section>
+                
+                <section class="category-item">
+                    <h3>회원가입결과</h3>
+                    <p>방금 입력한 정보, 여기서 바로 확인하세요.</p>
+                    <span class="category-note">회원가입을 먼저 완료해야 결과를 볼 수 있어요</span>
+                    <a href="signUpResult.html">바로가기</a>
+                </section>
+                <section class="category-item">
+                    <h3>내 여행지</h3>
+                    <p>다녀온 곳들을 모아둔 여행 기록입니다.</p>
+                    <span class="category-stat">6곳의 기록</span>
+                    <a href="myTrip.html">바로가기</a>
+                </section>
+            </main>
+
+            <footer class="site-footer">
+                <button type="button" id="replay-intro-btn" class="replay-intro-btn">인트로 다시 보기</button>
+                <p>&copy; 2026 SKALA</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
